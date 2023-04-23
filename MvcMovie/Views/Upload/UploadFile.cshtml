@@ -1,0 +1,15 @@
+﻿@*@model (nazev view model classy s IDckem)*@
+
+@{
+    ViewBag.Title = "UploadFile";
+}
+<h2>UploadFile</h2>
+
+@using(Html.BeginForm( "UploadFile","Upload", new {/*id = Model.Id*/} , FormMethod.Post, null, new { enctype="multipart/form-data"}))
+{
+    <div>
+        @Html.TextBox("file", "", new {  type= "file"}) <br />
+        <input type="submit" value="Upload" />
+        @ViewBag.Message
+    </div>
+}
